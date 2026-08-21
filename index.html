@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,11 +12,10 @@
 
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: Arial, sans-serif;
       background: #0b0f19;
-      color: #ffffff;
+      color: white;
       height: 100vh;
-      overflow: hidden;
     }
 
     .app {
@@ -24,15 +23,11 @@
       height: 100vh;
     }
 
-    /* SIDEBAR */
-
     .sidebar {
-      width: 260px;
+      width: 250px;
       background: #111827;
-      border-right: 1px solid #263043;
-      padding: 18px;
-      display: flex;
-      flex-direction: column;
+      padding: 20px;
+      border-right: 1px solid #293246;
     }
 
     .logo {
@@ -45,6 +40,10 @@
       color: #6c63ff;
     }
 
+    button {
+      cursor: pointer;
+    }
+
     .new-chat {
       width: 100%;
       padding: 13px;
@@ -52,41 +51,21 @@
       border: 1px solid #39445a;
       background: #1b2333;
       color: white;
-      cursor: pointer;
       font-size: 15px;
-      margin-bottom: 20px;
+      margin-bottom: 25px;
     }
 
-    .new-chat:hover {
-      background: #252f43;
-    }
-
-    .side-title {
-      color: #8993a7;
-      font-size: 12px;
-      margin: 10px 5px;
-      text-transform: uppercase;
-    }
-
-    .side-item {
-      padding: 10px;
+    .item {
+      padding: 12px;
+      margin: 5px 0;
       border-radius: 8px;
       color: #cbd2df;
       cursor: pointer;
-      font-size: 14px;
     }
 
-    .side-item:hover {
+    .item:hover {
       background: #1d2637;
     }
-
-    .bottom {
-      margin-top: auto;
-      border-top: 1px solid #263043;
-      padding-top: 15px;
-    }
-
-    /* MAIN */
 
     .main {
       flex: 1;
@@ -95,17 +74,17 @@
       min-width: 0;
     }
 
-    .topbar {
+    .top {
       height: 65px;
-      border-bottom: 1px solid #263043;
+      border-bottom: 1px solid #293246;
       display: flex;
       align-items: center;
-      padding: 0 22px;
-      font-weight: bold;
+      padding: 0 25px;
       font-size: 18px;
+      font-weight: bold;
     }
 
-    .topbar span {
+    .top span {
       color: #6c63ff;
       margin-left: 5px;
     }
@@ -113,161 +92,134 @@
     .chat {
       flex: 1;
       overflow-y: auto;
-      padding: 35px 20px;
+      padding: 30px 20px 100px;
     }
 
     .welcome {
-      max-width: 800px;
-      margin: 80px auto;
+      max-width: 700px;
+      margin: 100px auto;
       text-align: center;
     }
 
-    .welcome-icon {
-      width: 70px;
-      height: 70px;
-      margin: auto;
-      border-radius: 20px;
-      background: linear-gradient(135deg, #6c63ff, #9c6cff);
+    .icon {
+      width: 75px;
+      height: 75px;
+      border-radius: 22px;
+      background: linear-gradient(135deg, #6c63ff, #9b6cff);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 30px;
+      margin: auto;
+      font-size: 32px;
       font-weight: bold;
-      box-shadow: 0 10px 35px rgba(108, 99, 255, 0.25);
     }
 
-    .welcome h1 {
+    h1 {
       font-size: 34px;
-      margin: 22px 0 10px;
+      margin: 25px 0 10px;
     }
 
     .welcome p {
       color: #9ba5b7;
-      font-size: 16px;
     }
 
-    /* MESSAGES */
-
     .message {
-      max-width: 850px;
-      margin: 0 auto 22px;
+      max-width: 800px;
+      margin: 20px auto;
       display: flex;
-      gap: 13px;
+      gap: 12px;
     }
 
     .avatar {
-      min-width: 38px;
+      width: 38px;
       height: 38px;
+      min-width: 38px;
       border-radius: 10px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 12px;
+      font-size: 11px;
       font-weight: bold;
+      background: #6c63ff;
     }
 
-    .user-avatar {
+    .user {
       background: #263043;
     }
 
-    .ai-avatar {
-      background: linear-gradient(135deg, #6c63ff, #9c6cff);
-    }
-
-    .message-content {
+    .text {
+      padding-top: 8px;
       line-height: 1.6;
       white-space: pre-wrap;
-      padding-top: 6px;
     }
-
-    /* INPUT */
 
     .input-area {
       padding: 15px 20px 20px;
-      border-top: 1px solid #263043;
-      background: #0b0f19;
+      border-top: 1px solid #293246;
     }
 
     .input-box {
-      max-width: 850px;
+      max-width: 800px;
       margin: auto;
       position: relative;
     }
 
     textarea {
       width: 100%;
-      min-height: 58px;
-      max-height: 180px;
+      height: 60px;
       resize: none;
-      padding: 17px 60px 17px 18px;
+      border: 1px solid #39445a;
       border-radius: 15px;
-      border: 1px solid #374257;
-      outline: none;
       background: #151c2a;
       color: white;
+      padding: 18px 60px 18px 18px;
+      outline: none;
       font-size: 15px;
-      font-family: inherit;
     }
 
     textarea:focus {
       border-color: #6c63ff;
     }
 
-    textarea::placeholder {
-      color: #7e889b;
-    }
-
     .send {
       position: absolute;
-      right: 9px;
-      bottom: 9px;
+      right: 10px;
+      bottom: 10px;
       width: 40px;
       height: 40px;
-      border: none;
+      border: 0;
       border-radius: 10px;
       background: #6c63ff;
       color: white;
-      cursor: pointer;
-      font-size: 18px;
+      font-size: 20px;
     }
 
     .send:hover {
-      background: #7c74ff;
+      background: #8179ff;
     }
 
-    .send:disabled {
-      opacity: 0.5;
-      cursor: not-allowed;
-    }
-
-    .notice {
+    .small {
       text-align: center;
       color: #687386;
       font-size: 11px;
-      margin-top: 9px;
+      margin-top: 8px;
     }
 
-    /* MOBILE */
-
-    @media (max-width: 700px) {
+    @media(max-width:700px) {
       .sidebar {
         display: none;
+      }
+
+      h1 {
+        font-size: 28px;
       }
 
       .welcome {
         margin: 60px auto;
       }
 
-      .welcome h1 {
-        font-size: 28px;
-      }
-
-      .chat {
-        padding: 20px 12px;
-      }
-
       .input-area {
-        padding: 12px;
+        padding: 10px;
       }
     }
   </style>
@@ -275,35 +227,203 @@
 
 <body>
 
-  <div class="app">
+<div class="app">
 
-    <aside class="sidebar">
+  <div class="sidebar">
 
-      <div class="logo">
-        ZEESHAM<span> Ai</span>
+    <div class="logo">
+      ZEESHAM<span> Ai</span>
+    </div>
+
+    <button class="new-chat" onclick="newChat()">
+      + New Chat
+    </button>
+
+    <div class="item" onclick="showHome()">Chat</div>
+
+    <div class="item" onclick="showAI()">AI</div>
+
+    <div class="item" onclick="showSettings()">Settings</div>
+
+    <div class="item" onclick="showAbout()">About ZEESHAM Ai</div>
+
+  </div>
+
+  <div class="main">
+
+    <div class="top">
+      ZEESHAM <span>Ai</span>
+    </div>
+
+    <div class="chat" id="chat">
+
+      <div class="welcome" id="welcome">
+
+        <div class="icon">Z</div>
+
+        <h1>Welcome to ZEESHAM Ai</h1>
+
+        <p>
+          Your intelligent AI assistant.
+          Ask anything and let's get started.
+        </p>
+
       </div>
 
-      <button class="new-chat" onclick="newChat()">
-        + New chat
-      </button>
+    </div>
 
-      <div class="side-title">
-        Explore
+    <div class="input-area">
+
+      <div class="input-box">
+
+        <textarea
+          id="input"
+          placeholder="Message ZEESHAM Ai..."
+        ></textarea>
+
+        <button class="send" onclick="sendMessage()">
+          ↑
+        </button>
+
       </div>
 
-      <div class="side-item">
-        Chat
+      <div class="small">
+        ZEESHAM Ai can make mistakes. Check important information.
       </div>
 
-      <div class="side-item">
-        AI Assistant
-      </div>
+    </div>
 
-      <div class="side-item">
-        Settings
-      </div>
+  </div>
 
-      <div class="bottom">
-        <div class="side-item">
-          About ZEESHAM Ai
-        </div>
+</div>
+
+<script>
+
+function sendMessage() {
+
+  const input = document.getElementById("input");
+
+  const message = input.value.trim();
+
+  if (message === "") {
+    return;
+  }
+
+  const welcome = document.getElementById("welcome");
+
+  if (welcome) {
+    welcome.remove();
+  }
+
+  addMessage(message, "user");
+
+  input.value = "";
+
+  setTimeout(function() {
+
+    addMessage(
+      "Hello! I'm ZEESHAM Ai. The chat interface is working. The real AI engine will be connected next.",
+      "ai"
+    );
+
+  }, 500);
+
+}
+
+function addMessage(message, type) {
+
+  const chat = document.getElementById("chat");
+
+  const row = document.createElement("div");
+
+  row.className = "message";
+
+  const avatar = document.createElement("div");
+
+  avatar.className =
+    "avatar " +
+    (type === "user" ? "user" : "");
+
+  avatar.textContent =
+    type === "user" ? "YOU" : "Z";
+
+  const text = document.createElement("div");
+
+  text.className = "text";
+
+  text.textContent = message;
+
+  row.appendChild(avatar);
+
+  row.appendChild(text);
+
+  chat.appendChild(row);
+
+  chat.scrollTop = chat.scrollHeight;
+
+}
+
+function newChat() {
+
+  document.getElementById("chat").innerHTML = `
+
+    <div class="welcome" id="welcome">
+
+      <div class="icon">Z</div>
+
+      <h1>Welcome to ZEESHAM Ai</h1>
+
+      <p>
+        Your intelligent AI assistant.
+        Ask anything and let's get started.
+      </p>
+
+    </div>
+
+  `;
+
+}
+
+function showHome() {
+
+  newChat();
+
+}
+
+function showAI() {
+
+  alert("ZEESHAM Ai engine will be connected here.");
+
+}
+
+function showSettings() {
+
+  alert("Settings will be added here.");
+
+}
+
+function showAbout() {
+
+  alert("ZEESHAM Ai — your intelligent AI assistant.");
+
+}
+
+document.getElementById("input").addEventListener(
+  "keydown",
+  function(event) {
+
+    if (event.key === "Enter" && !event.shiftKey) {
+
+      event.preventDefault();
+
+      sendMessage();
+
+    }
+
+  }
+);
+
+</script>
+
+</body>
+</html>
